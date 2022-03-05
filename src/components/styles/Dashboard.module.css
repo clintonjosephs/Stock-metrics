@@ -23,14 +23,42 @@
 }
 
 .topSymbol {
+  background: var(--neutral-color-1);
+  min-width: 3rem;
+  color: var(--primary-color);
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+.topCard {
     background: var(--neutral-color-1);
     min-width: 3rem;
     color: var(--primary-color);
     border-radius: 20px;
-    margin-bottom: 3rem;
     display: flex;
     justify-content: center;
-    padding-top: .5rem;
+    padding-top: 0.5rem;
+  }
+
+.cardBody span {
+    margin-top: 0.6rem;
+}
+
+.card {
+    color: white;
+    background: var(--primary-color-2);
+    min-height: 13rem;
+    padding: 0.7rem;
+    box-shadow: 0 0 2px var(--neutral-color-2);
+    cursor: pointer;
+}
+
+.cardTop {
+  font-size: 1.1rem;
+  color: var(--neutral-color-2);
 }
 
 .blink {
@@ -45,5 +73,11 @@
 @-webkit-keyframes blink-animation {
   to {
     visibility: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    font-size: 1rem;
   }
 }
