@@ -7,7 +7,6 @@ const apiKey = 'ccdf8ccdd1e7c1ce0b485d11b55d46ad';
 // asyncronous actions
 export const fetchStockMetrics = () => async (dispatch) => {
   const data = await fetchApiCall(`${endpoint}stock_market/actives?limit=20&apikey=${apiKey}`);
-  console.log(data);
   dispatch(loadStockMetrics(data));
 };
 

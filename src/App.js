@@ -1,9 +1,11 @@
+import { Container } from 'react-bootstrap';
+import Dashboard from './components/Dashboard/DashBoard';
 import './App.css';
 
 const App = () => (
-  <div className="App">
-    <h1>Stock metrics app</h1>
-  </div>
+  <Container fluid className="App">
+    <Dashboard />
+  </Container>
 );
 
 export default App;
