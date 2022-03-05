@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { AiFillAudio } from 'react-icons/ai';
 import { IoMdSettings } from 'react-icons/io';
-import styles from '../../styles/Dashboard.module.css';
+import styles from '../styles/Dashboard.module.css';
 
 const Header = () => (
   <div className={styles.header}>

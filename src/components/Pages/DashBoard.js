@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './segments/Header';
-import Reports from './segments/Report';
+import Header from '../Dashboard/Header';
+import Reports from '../Dashboard/Report';
 
 const Dashboard = () => (
   <div>

@@ -1,23 +1,49 @@
 .header {
-    background: var(--primary-color-2);
-    height: 4rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    color: var(--neutral-color-2);
+  background: var(--primary-color-2);
+  min-height: 4rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: var(--neutral-color-2);
 }
 
 .topReport {
-    height: 20rem;
-    background: var(--neutral-color-1);
-    border-radius: 1.5rem;
-    padding: 1rem;
+  height: 17rem;
+  background: var(--neutral-color-1);
+  border-radius: 1.5rem;
+  padding: 1rem;
 }
 
 .row {
-    background: var(--primary-color-2);
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 0.7rem;
-    justify-items: center;
-    min-height: 20rem;
+  background: var(--primary-color-2);
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  justify-items: center;
+  min-height: 20rem;
+}
+
+.topSymbol {
+    background: var(--neutral-color-1);
+    min-width: 3rem;
+    color: var(--primary-color);
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    padding-top: .5rem;
+}
+
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }
