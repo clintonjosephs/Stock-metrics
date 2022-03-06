@@ -32,7 +32,7 @@ const Reports = ({
             }}
           >
             {' '}
-            <FormatNumber number={dailyTotal} />
+            <FormatNumber number={Number(dailyTotal)} />
             {' '}
           </span>
           <div
@@ -70,9 +70,9 @@ Reports.propTypes = {
       changesPercentage: PropTypes.number,
     }),
   ).isRequired,
-  dailyTotal: PropTypes.number.isRequired,
-  dailyChanges: PropTypes.number.isRequired,
-  dailyProfit: PropTypes.number.isRequired,
+  dailyTotal: PropTypes.string.isRequired,
+  dailyChanges: PropTypes.string.isRequired,
+  dailyProfit: PropTypes.string.isRequired,
 };
 
 export default Reports;

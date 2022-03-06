@@ -5,7 +5,7 @@ const LOAD_COMPANY_DETAILS = 'stockMetrics/stock/LOAD_COMPANY_DETAILS';
 const LOAD_INCOME_STATEMENT = 'stockMetrics/stock/LOAD_INCOME_STATEMENT';
 
 // initial state of the store data
-const metricsData = [{ metrics: [] }, { details: [] }, { statement: [] }];
+const metricsData = { metrics: [], details: [], statement: [] };
 
 // syncronous actions
 
