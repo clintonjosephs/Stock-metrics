@@ -15,87 +15,50 @@ const IncomeStatement = () => (
         <Table striped bordered hover variant="light">
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Revenue</th>
+              <th>Year</th>
               <th>Financial Details</th>
-              <th>Filling Date</th>
+
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>2021-12-31</td>
               <td>
-                <FormatNumber number={136341000000} />
+                <div className={styles.year}>2021 </div>
               </td>
               <td>
-                <div>
-                  Net Income:
-                  <FormatNumber number={17937000000} />
+                <div className="d-flex">
+                  <div>
+                    Revenue:
+                    {' '}
+                    <FormatNumber number={136341000000} />
+                  </div>
+                  <div style={{ marginLeft: '2rem' }}>
+                    Net Income:
+                    <FormatNumber number={17937000000} />
+                  </div>
                 </div>
-                <div>
-                  Ratio:
-                  {0.131}
+                <div className="d-flex my-3">
+                  <div>
+                    Ratio:
+                    {' '}
+                    {0.131}
+                  </div>
+                  <div style={{ marginLeft: '2rem' }}>
+                    eps:
+                    {' '}
+                    {4.483}
+                  </div>
+                  <div style={{ marginLeft: '2rem' }}>
+                    epsdiluted:
+                    {' '}
+                    {4.437}
+                  </div>
                 </div>
-                <div>
-                  eps:
-                  {4.483}
-                </div>
-                <div>
-                  epsdiluted:
-                  {4.437}
-                </div>
-              </td>
-              <td>2022-02-04</td>
-            </tr>
-            <tr>
-              <td>2021-12-31</td>
-              <td>
-                <FormatNumber number={136341000000} />
-              </td>
-              <td>
-                <div>
-                  Net Income:
-                  <FormatNumber number={17937000000} />
-                </div>
-                <div>
-                  Ratio:
-                  {0.131}
-                </div>
-                <div>
-                  eps:
-                  {4.483}
-                </div>
-                <div>
-                  epsdiluted:
-                  {4.437}
+                <div className="d-flex my-3">
+                  <div>Filling Date: 2022-02-04 </div>
+                  <div style={{ marginLeft: '2rem' }}>Accepted Date: 2022-02-04 </div>
                 </div>
               </td>
-              <td>2022-02-04</td>
-            </tr>
-            <tr>
-              <td>2021-12-31</td>
-              <td>
-                <FormatNumber number={136341000000} />
-              </td>
-              <td>
-                <div>
-                  Net Income:
-                  <FormatNumber number={17937000000} />
-                </div>
-                <div>
-                  Ratio:
-                  {0.131}
-                </div>
-                <div>
-                  eps:
-                  {4.483}
-                </div>
-                <div>
-                  epsdiluted:
-                  {4.437}
-                </div>
-              </td>
-              <td>2022-02-04</td>
             </tr>
           </tbody>
         </Table>

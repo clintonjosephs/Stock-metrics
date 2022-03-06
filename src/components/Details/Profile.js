@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { BsArrowUp, BsArrowDown } from 'react-icons/bs';
 import FormatNumber from '../FormatNumber';
 import styles from '../styles/Details.module.css';
 
@@ -52,7 +51,7 @@ const Profile = () => {
         <Col xs={12} md={9}>
           <div>
             {' '}
-            <span>CompanyName: </span>
+            <span>Company name: </span>
             {' '}
 &nbsp;
             {data.companyName}
@@ -73,7 +72,7 @@ const Profile = () => {
           </div>
           <div>
             {' '}
-            <span>Web Addr.: </span>
+            <span>Web addr.: </span>
             {' '}
 &nbsp;
             <a href={data.website} target="_blank" rel="noreferrer">{ data.website }</a>
@@ -86,25 +85,8 @@ const Profile = () => {
             {data.country}
           </div>
           <div>
-            <span>Market Cap:</span>
+            <span>Market cap:</span>
             <FormatNumber number={data.mktCap} />
-          </div>
-          <div>
-            <span>Price: </span>
-
-            {' '}
-            {data.price}
-            ,
-          </div>
-          <div>
-            <BsArrowUp color="green" className="blink" />
-            {' '}
-            {data.beta}
-          </div>
-          <div>
-            <BsArrowDown color="red" className="blink" />
-            {' '}
-            {data.changes}
           </div>
         </Col>
         <Col xs={12} md={3}>

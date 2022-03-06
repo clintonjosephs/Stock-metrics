@@ -4,8 +4,7 @@
 }
 
 .marginCreate span {
-    color: var(--neutral-color-2);
-    font-style: italic;
+    color: var(--neutral-color-1);
 }
 
 .marginCreate a {
@@ -17,8 +16,14 @@
   margin-top: 1rem;
   justify-items: center;
   min-height: 20rem;
-  color: var(--neutral-color-1);
+  color: var(--neutral-color-2);
   line-height: 1.7rem;
+}
+
+.year {
+    font-size: xx-large;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
