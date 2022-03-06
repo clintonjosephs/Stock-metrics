@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import Dashboard from './components/Pages/DashBoard';
-import IncomeStatement from './components/Details/IncomeStatement';
+import Details from './components/Pages/Details';
 import './App.css';
 
 const App = () => (
@@ -15,7 +15,7 @@ const App = () => (
         </Container>
       )}
     />
-    <Route path="/details/:id" element={<IncomeStatement />} />
+    <Route path="/details/:id" element={<Details />} />
   </Routes>
 );
 
