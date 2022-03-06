@@ -1,0 +1,36 @@
+.marginCreate {
+  min-width: 50rem;
+}
+
+.marginCreate span {
+    color: var(--neutral-color-2);
+    font-style: italic;
+}
+
+.marginCreate a {
+    color: var(--neutral-color-2);
+}
+
+.row {
+  background: var(--primary-color-2);
+  margin-top: 1rem;
+  padding: 1rem;
+  justify-items: center;
+  min-height: 20rem;
+  color: var(--neutral-color-1);
+  line-height: 1.7rem;
+}
+
+@media (max-width: 768px) {
+  .card {
+    font-size: 1rem;
+  }
+
+  .marginCreate {
+    min-width: 0rem;
+  }
+
+  .staticChart {
+    width: 8rem;
+  }
+}

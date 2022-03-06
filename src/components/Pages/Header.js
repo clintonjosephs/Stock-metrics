@@ -15,10 +15,10 @@ const Header = ({ type }) => {
         <Row style={{ alignItems: `${!renderAgain ? 'center' : 'left'}`, margin: '5px' }}>
           { type && (
           <Col xs={2} md={1}>
-            <AiOutlineArrowLeft onClick={() => navigate('/')} size={25} style={{ float: 'left', marginTop: '0.3rem' }} />
+            <AiOutlineArrowLeft onClick={() => navigate('/')} size={25} style={{ float: 'left', marginTop: '0.3rem', cursor: 'pointer' }} />
           </Col>
           )}
-          <Col xs={6} md={5}>
+          <Col xs={6} md={`${!renderAgain ? 6 : 5}`}>
             <h4>{ `${!renderAgain ? 'Stock Metrics' : 'Company Details'}`}</h4>
           </Col>
           <Col xs={4} md={6}>

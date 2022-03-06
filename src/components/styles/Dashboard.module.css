@@ -50,10 +50,6 @@
   margin-top: 0.6rem;
 }
 
-.marginCreate {
-  min-width: 50rem;
-}
-
 .staticChart {
   width: 10rem;
 }
@@ -70,21 +66,6 @@
 .cardTop {
   font-size: 1.1rem;
   color: var(--neutral-color-2);
-}
-
-.blink {
-  animation: blink-animation 1s steps(5, start) infinite;
-  -webkit-animation: blink-animation 1s steps(5, start) infinite;
-}
-@keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
-}
-@-webkit-keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
 }
 
 @media (max-width: 768px) {

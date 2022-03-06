@@ -63,12 +63,12 @@ const Reports = () => {
               }}
             >
               <span>
-                <BsArrowUp color="green" className={styles.blink} />
+                <BsArrowUp color="green" className="blink" />
                 $3.99
               </span>
               <br />
               <span>
-                <BsArrowDown color="red" className={styles.blink} />
+                <BsArrowDown color="red" className="blink" />
                 $2.55
               </span>
             </div>

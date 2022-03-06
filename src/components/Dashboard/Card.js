@@ -34,11 +34,11 @@ const Card = () => {
               <Col xs={12} md={6}>
                 <div className="d-flex flex-column">
                   <span>
-                    <BsArrowUp color="green" className={styles.blink} />
+                    <BsArrowUp color="green" className="blink" />
                     -1.8408215
                   </span>
                   <span>
-                    <BsArrowDown color="red" className={styles.blink} />
+                    <BsArrowDown color="red" className="blink" />
                     -3.06
                   </span>
                 </div>

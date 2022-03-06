@@ -15,7 +15,14 @@ const App = () => (
         </Container>
       )}
     />
-    <Route path="/details/:id" element={<Details />} />
+    <Route
+      path="/details/:id"
+      element={(
+        <Container fluid className="App">
+          <Details />
+        </Container>
+      )}
+    />
   </Routes>
 );
 

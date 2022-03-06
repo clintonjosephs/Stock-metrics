@@ -30,11 +30,11 @@ const TopCompanies = ({ data }) => (
               <h6>{symbol}</h6>
             </span>
             <span>
-              <BsArrowUp color="green" className={styles.blink} />
+              <BsArrowUp color="green" className="blink" />
               {changesPercentage}
             </span>
             <span>
-              <BsArrowDown color="red" className={styles.blink} />
+              <BsArrowDown color="red" className="blink" />
               {change}
             </span>
             <span>
