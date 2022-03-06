@@ -3,7 +3,9 @@ import { useSelector } from 'react-redux';
 import Header from './Header';
 import Reports from '../Dashboard/Report';
 import CardList from '../Dashboard/CardList';
-import { sortObj } from '../../utils/helpers';
+import {
+  sortObj, sumPrices, sumProfit, sumChanges,
+} from '../../utils/helpers';
 
 const Dashboard = () => {
   const activeCompanies = useSelector(
@@ -22,6 +24,9 @@ const Dashboard = () => {
     <section className="pb-5">
       <Header type={false} />
       <Reports
+        dailyTotal={sumPrices(activeCompanies)}
+        dailyProfit={sumProfit(activeCompanies)}
+        dailyChanges={sumChanges(activeCompanies)}
         data={top3}
       />
       <CardList data={activeCompanies} />

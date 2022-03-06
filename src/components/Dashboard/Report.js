@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-bootstrap';
 import { BsArrowUp, BsArrowDown } from 'react-icons/bs';
+import FormatNumber from '../FormatNumber';
 import styles from '../styles/Dashboard.module.css';
 import TopCompanies from './TopCompanies';
 
-const Reports = ({ data }) => (
+const Reports = ({
+  data, dailyTotal, dailyProfit, dailyChanges,
+}) => (
   <Container className={styles.marginCreate}>
     <Row
       className={`${styles.row} justify-content-center align-content-center mx-lg-5 mt-5`}
@@ -29,7 +32,7 @@ const Reports = ({ data }) => (
             }}
           >
             {' '}
-            $2,128,022.00
+            <FormatNumber number={dailyTotal} />
             {' '}
           </span>
           <div
@@ -41,12 +44,14 @@ const Reports = ({ data }) => (
           >
             <span>
               <BsArrowUp color="green" className="blink" />
-              $3.99
+              +
+              {dailyProfit}
             </span>
             <br />
             <span>
               <BsArrowDown color="red" className="blink" />
-              $2.55
+              -
+              {dailyChanges}
             </span>
           </div>
         </div>
@@ -65,6 +70,9 @@ Reports.propTypes = {
       changesPercentage: PropTypes.number,
     }),
   ).isRequired,
+  dailyTotal: PropTypes.number.isRequired,
+  dailyChanges: PropTypes.number.isRequired,
+  dailyProfit: PropTypes.number.isRequired,
 };
 
 export default Reports;
