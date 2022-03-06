@@ -2,14 +2,12 @@
   background: var(--primary-color-2);
   min-height: 4rem;
   padding: 0.5rem;
-  border-radius: 5px;
   color: var(--neutral-color-2);
 }
 
 .topReport {
   height: 17rem;
   background: var(--neutral-color-1);
-  border-radius: 1.5rem;
   padding: 1rem;
 }
 
@@ -17,7 +15,6 @@
   background: var(--primary-color-2);
   margin-top: 1rem;
   padding: 1rem;
-  border-radius: 0.7rem;
   justify-items: center;
   min-height: 20rem;
 }
@@ -26,7 +23,6 @@
   background: var(--neutral-color-1);
   min-width: 3rem;
   color: var(--primary-color);
-  border-radius: 20px;
   margin-bottom: 3rem;
   display: flex;
   justify-content: center;
@@ -34,26 +30,33 @@
 }
 
 .topCard {
-    background: var(--neutral-color-1);
-    min-width: 3rem;
-    color: var(--primary-color);
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    padding-top: 0.5rem;
-  }
+  background: var(--neutral-color-2);
+  min-width: 3rem;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
 
 .cardBody span {
-    margin-top: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.marginCreate {
+  min-width: 50rem;
+}
+
+.staticChart {
+  width: 12rem;
 }
 
 .card {
-    color: white;
-    background: var(--primary-color-2);
-    min-height: 13rem;
-    padding: 0.7rem;
-    box-shadow: 0 0 2px var(--neutral-color-2);
-    cursor: pointer;
+  color: white;
+  background: var(--primary-color-2);
+  min-height: 13rem;
+  padding: 0.7rem;
+  box-shadow: 0 0 2px var(--neutral-color-2);
+  cursor: pointer;
 }
 
 .cardTop {
@@ -79,5 +82,13 @@
 @media (max-width: 768px) {
   .card {
     font-size: 1rem;
+  }
+
+  .marginCreate {
+   min-width: 0rem;
+  }
+
+  .staticChart {
+    width: 8rem;
   }
 }

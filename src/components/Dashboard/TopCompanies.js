@@ -14,7 +14,8 @@ const TopCompanies = ({ data }) => (
         <Col
           key={symbol}
           md={2}
-          sm={12}
+          sm={`${index === 0 ? 12 : 6}`}
+          xs={`${index === 0 ? 12 : 6}`}
           className={`${styles.topReport} mx-md-1 my-2`}
           style={{
             backgroundColor: `${colors[index]}`,

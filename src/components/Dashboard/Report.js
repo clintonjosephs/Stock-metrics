@@ -29,14 +29,15 @@ const Reports = () => {
     },
   ];
   return (
-    <Container fluid>
+    <Container className={styles.marginCreate}>
       <Row
         className={`${styles.row} justify-content-center align-content-center mx-lg-5 mt-5`}
       >
         <TopCompanies data={topProfit} />
         <Col
           md={5}
-          sm={12}
+          sm={6}
+          xs={12}
           style={{ background: 'transparent', padding: '1rem' }}
         >
           <div className="d-flex flex-column align-items-end">
