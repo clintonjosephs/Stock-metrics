@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchCompanyDetails, fetchCompanyIncomeStatement } from '../../redux/stock/StockThunks';
+import IncomeStatement from '../Details/IncomeStatement';
 import Profile from '../Details/Profile';
 import Header from './Header';
 
@@ -17,6 +18,7 @@ const Details = () => {
     <section className="pb-5">
       <Header type />
       <Profile />
+      <IncomeStatement />
     </section>
   );
 };

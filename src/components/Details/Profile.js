@@ -1,8 +1,7 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { BsArrowUp, BsArrowDown } from 'react-icons/bs';
-import NumberFormat from 'react-number-format';
+import FormatNumber from '../FormatNumber';
 import styles from '../styles/Details.module.css';
 
 const Profile = () => {
@@ -87,23 +86,8 @@ const Profile = () => {
             {data.country}
           </div>
           <div>
-            <NumberFormat
-              value={data.mktCap}
-              className="foo"
-              displayType="text"
-              thousandSeparator
-              prefix="$"
-              renderText={(value, props) => (
-                <div {...props}>
-                  {' '}
-                  <span>Market Cap: </span>
-                  {' '}
-&nbsp;
-                  {value}
-                </div>
-              )}
-            />
-
+            <span>Market Cap:</span>
+            <FormatNumber number={data.mktCap} />
           </div>
           <div>
             <span>Price: </span>

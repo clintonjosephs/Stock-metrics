@@ -1,5 +1,6 @@
 .marginCreate {
   min-width: 50rem;
+  text-align: justify;
 }
 
 .marginCreate span {
@@ -14,7 +15,6 @@
 .row {
   background: var(--primary-color-2);
   margin-top: 1rem;
-  padding: 1rem;
   justify-items: center;
   min-height: 20rem;
   color: var(--neutral-color-1);
