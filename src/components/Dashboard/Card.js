@@ -1,14 +1,15 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import { BsArrowRightCircle, BsArrowUp, BsArrowDown } from 'react-icons/bs';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/Dashboard.module.css';
 import ChartImg from '../../images/chart-graph.png';
 
-const Card = () => {
+const Card = ({
+  change, companyName, price, changesPercentage, id,
+}) => {
   const navigate = useNavigate();
-  const id = 'AAPL';
-
   return (
     <Col xs={6} sm={6} md={4} className={styles.card} onClick={() => navigate(`/details/${id}`)}>
       <div
@@ -16,7 +17,7 @@ const Card = () => {
       >
         <BsArrowRightCircle />
         <span>
-          <b>Ford Motor Company</b>
+          <b>{companyName}</b>
         </span>
       </div>
       <div
@@ -24,10 +25,13 @@ const Card = () => {
       >
         <div className="d-flex flex-column align-items-start">
           <span className={styles.topCard}>
-            <h6>AAPL</h6>
+            <h6>{id}</h6>
           </span>
           <span>
-            <b>$106.31</b>
+            <b>
+              $
+              {price}
+            </b>
           </span>
           <Container fluid>
             <Row>
@@ -35,11 +39,11 @@ const Card = () => {
                 <div className="d-flex flex-column">
                   <span>
                     <BsArrowUp color="green" className="blink" />
-                    -1.8408215
+                    {changesPercentage}
                   </span>
                   <span>
                     <BsArrowDown color="red" className="blink" />
-                    -3.06
+                    {change}
                   </span>
                 </div>
               </Col>
@@ -56,6 +60,14 @@ const Card = () => {
       </div>
     </Col>
   );
+};
+
+Card.propTypes = {
+  id: PropTypes.string.isRequired,
+  change: PropTypes.number.isRequired,
+  companyName: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  changesPercentage: PropTypes.number.isRequired,
 };
 
 export default Card;
