@@ -52,6 +52,7 @@
 
 .staticChart {
   width: 10rem;
+  opacity: 0.7;
 }
 
 .formControl {

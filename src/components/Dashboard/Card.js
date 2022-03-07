@@ -2,16 +2,25 @@ import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import { BsArrowRightCircle, BsArrowUp, BsArrowDown } from 'react-icons/bs';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/Dashboard.module.css';
 import ChartImg from '../../images/chart-graph.png';
+import { filterCompanies } from '../../redux/stock/StockActions';
 
 const Card = ({
   change, companyName, price, changesPercentage, id,
 }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const redirect = () => {
+    dispatch(filterCompanies(''));
+    navigate(`/details/${id}`);
+  };
+
   return (
-    <Col xs={6} sm={6} md={4} className={styles.card} onClick={() => navigate(`/details/${id}`)}>
+    <Col xs={6} sm={6} md={4} className={styles.card} onClick={redirect}>
       <div
         className={`${styles.cardTop} d-flex flex-row-reverse justify-content-between align-items-center`}
       >
