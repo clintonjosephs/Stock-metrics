@@ -4,7 +4,7 @@ import Header from './Header';
 import Reports from '../Dashboard/Report';
 import CardList from '../Dashboard/CardList';
 import {
-  sortObj, sumPrices, sumProfit, sumChanges,
+  sumPrices, sumProfit, sumChanges, sortObj,
 } from '../../utils/helpers';
 
 const Dashboard = () => {
@@ -16,7 +16,8 @@ const Dashboard = () => {
   let top3 = [];
 
   if (activeCompanies.length > 0) {
-    sort = sortObj(activeCompanies);
+    top3 = [activeCompanies[0], activeCompanies[1], activeCompanies[2]];
+    sort = sortObj([...activeCompanies]);
     top3 = [sort[0], sort[1], sort[2]];
   }
 

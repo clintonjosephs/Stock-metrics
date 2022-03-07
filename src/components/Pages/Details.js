@@ -19,7 +19,6 @@ const Details = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('using effect');
     dispatch(fetchCompanyDetails(param.id));
   }, [param]);
 

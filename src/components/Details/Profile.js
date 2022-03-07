@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Container, Row, Col } from 'react-bootstrap';
+import {
+  Container, Row, Col, Button,
+} from 'react-bootstrap';
+import { IoIosPaper } from 'react-icons/io';
 import FormatNumber from '../FormatNumber';
 import styles from '../styles/Details.module.css';
+import ReportModal from '../ReportModal';
 
 const Profile = ({ details }) => {
   const {
     companyName, symbol, description, website, country, mktCap, image, ceo,
   } = details;
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <Container className={styles.marginCreate}>
       <Row
@@ -53,14 +63,20 @@ const Profile = ({ details }) => {
             <FormatNumber number={mktCap} />
           </div>
         </Col>
-        <Col xs={12} md={3}>
+        <Col xs={12} md={3} className="text-center">
           <img src={image} alt="company" className="rounded" style={{ maxWidth: '11rem' }} />
           <div>
             { ceo}
             , CEO
           </div>
+          <Button variant="success" style={{ marginTop: '1rem' }} onClick={handleShow}>
+            <IoIosPaper />
+            {' '}
+            Visual Report
+          </Button>
         </Col>
       </Row>
+      <ReportModal show={show} onHide={handleClose} />
     </Container>
   );
 };
