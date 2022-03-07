@@ -42,7 +42,7 @@ const Profile = ({ details, statement }) => {
             {' '}
             <span>Description:</span>
             {' '}
-            { `${description <= 120 ? description : `${`${String(description).substring(0, 120)}...click website to read more`}`} ` }
+            { `${description <= 200 ? description : `${`${String(description).substring(0, 200)}...click website to read more`}`} ` }
           </div>
           <div>
             {' '}
@@ -66,8 +66,7 @@ const Profile = ({ details, statement }) => {
         <Col xs={12} md={3} className="text-center">
           <img src={image} alt="company" className="rounded" style={{ maxWidth: '11rem' }} />
           <div>
-            { ceo}
-            , CEO
+            { `${String(ceo).length > 0 ? `${ceo}, CEO` : 'Ceo, not avail.'}`}
           </div>
           <Button variant="success" style={{ marginTop: '1rem' }} onClick={handleShow}>
             <IoIosPaper />

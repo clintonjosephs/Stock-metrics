@@ -6,15 +6,12 @@ import IncomeStatement from '../Details/IncomeStatement';
 import Profile from '../Details/Profile';
 import Header from './Header';
 import { formatDataForChart } from '../../utils/helpers';
+import SkeletonLoader from '../SkeletonLoader';
 
 const Details = () => {
-  const details = useSelector(
-    (state) => state.metricsDataReducer.details,
-  );
+  const details = useSelector((state) => state.metricsDataReducer.details);
 
-  const statement = useSelector(
-    (state) => state.metricsDataReducer.statement,
-  );
+  const statement = useSelector((state) => state.metricsDataReducer.statement);
 
   const param = useParams();
   const dispatch = useDispatch();
@@ -23,16 +20,17 @@ const Details = () => {
     dispatch(fetchCompanyDetails(param.id));
   }, [param]);
 
-  if (details.length > 0) {
-    return (
-      <section className="pb-5">
-        <Header type />
-        <Profile details={details[0]} statement={formatDataForChart(statement)} />
-        <IncomeStatement statement={statement} />
-      </section>
-    );
+  if (details.length === 0 || statement.length === 0) {
+    return <SkeletonLoader sectionType />;
   }
-  return <h1>No data found</h1>;
+
+  return (
+    <section className="pb-5">
+      <Header type />
+      <Profile details={details[0]} statement={formatDataForChart(statement)} />
+      <IncomeStatement statement={statement} />
+    </section>
+  );
 };
 
 export default Details;

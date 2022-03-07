@@ -7,13 +7,13 @@ import styles from '../styles/Dashboard.module.css';
 import TopCompanies from './TopCompanies';
 
 const Reports = ({
-  data, dailyTotal, dailyProfit, dailyChanges,
+  data, dailyTotal, dailyProfit, dailyChanges, navigate,
 }) => (
   <Container className={styles.marginCreate}>
     <Row
       className={`${styles.row} justify-content-center align-content-center mx-lg-5 mt-5`}
     >
-      <TopCompanies data={data} />
+      <TopCompanies data={data} redirect={navigate} />
       <Col
         md={5}
         sm={6}
@@ -73,6 +73,7 @@ Reports.propTypes = {
   dailyTotal: PropTypes.string.isRequired,
   dailyChanges: PropTypes.string.isRequired,
   dailyProfit: PropTypes.string.isRequired,
+  navigate: PropTypes.func.isRequired,
 };
 
 export default Reports;

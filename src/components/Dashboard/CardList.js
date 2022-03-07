@@ -5,7 +5,7 @@ import Card from './Card';
 import styles from '../styles/Dashboard.module.css';
 import SearchForm from './SearchForm';
 
-const CardList = ({ data }) => (
+const CardList = ({ data, navigate }) => (
   <Container className={styles.marginCreate}>
     <Row
       className="mx-lg-5 mt-5 p-0"
@@ -25,6 +25,7 @@ const CardList = ({ data }) => (
           price={price}
           changesPercentage={changesPercentage}
           id={id}
+          redirect={navigate}
         />
       ))
      }
@@ -42,6 +43,7 @@ CardList.propTypes = {
       changesPercentage: PropTypes.number,
     }),
   ).isRequired,
+  navigate: PropTypes.func.isRequired,
 };
 
 export default CardList;

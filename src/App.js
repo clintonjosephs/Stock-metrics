@@ -13,7 +13,7 @@ const App = () => (
           <Dashboard />
           {' '}
         </Container>
-      )}
+        )}
     />
     <Route
       path="/details/:id"
@@ -21,7 +21,7 @@ const App = () => (
         <Container fluid className="App">
           <Details />
         </Container>
-      )}
+        )}
     />
   </Routes>
 );

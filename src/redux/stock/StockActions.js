@@ -4,10 +4,14 @@ const LOAD_STOCK_METRICS = 'stockMetrics/stock/LOAD_STOCK_METRICS';
 const LOAD_COMPANY_DETAILS = 'stockMetrics/stock/LOAD_COMPANY_DETAILS';
 const LOAD_INCOME_STATEMENT = 'stockMetrics/stock/LOAD_INCOME_STATEMENT';
 const FILTER_COMPANIES = 'stockMetrics/stock/FILTER_COMPANIES';
+const RESET_DETAILS = 'stockMetrics/stock/RESET_DETAILS';
 
 // initial state of the store data
 const metricsData = {
-  metrics: [], details: [], statement: [], dataWorker: [],
+  metrics: [],
+  details: [],
+  statement: [],
+  dataWorker: [],
 };
 
 // syncronous actions
@@ -32,6 +36,10 @@ export const filterCompanies = (payload) => ({
   payload,
 });
 
+export const resetDetails = () => ({
+  type: RESET_DETAILS,
+});
+
 // reducers
 
 const metricsDataReducer = (state = metricsData, { type, payload }) => {
@@ -48,10 +56,13 @@ const metricsDataReducer = (state = metricsData, { type, payload }) => {
       }
       return {
         ...state,
-        dataWorker: [...state.metrics.filter(({ companyName }) => companyName.toLowerCase()
-          .includes(payload.toLowerCase()))],
+        dataWorker: [
+          ...state.metrics.filter(({ companyName }) => companyName
+            .toLowerCase().includes(payload.toLowerCase())),
+        ],
       };
-
+    case RESET_DETAILS:
+      return { ...state, statement: [], details: [] };
     default:
       return state;
   }
