@@ -21,7 +21,6 @@ const IncomeStatement = ({ statement }) => (
           </thead>
           <tbody>
             { statement.map((data) => <StatementRow key={data.date} data={data} />)}
-
           </tbody>
         </Table>
       </Col>
