@@ -15,8 +15,8 @@ const IncomeStatement = ({ statement }) => (
         <Table striped bordered hover variant="light">
           <thead>
             <tr>
-              <th>Year</th>
-              <th>Financial Details</th>
+              <th style={{ textAlign: 'center' }}>Report year</th>
+              <th>Income Statement</th>
             </tr>
           </thead>
           <tbody>

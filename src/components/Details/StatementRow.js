@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { BsArrowDown, BsArrowUp } from 'react-icons/bs';
 import FormatNumber from '../FormatNumber';
 import styles from '../styles/Details.module.css';
 
 const StatementRow = ({ data }) => {
   const {
-    revenue, netIncome, newIncomeRatio, eps, epsdiluted, fillingDate, acceptedDate, date,
+    revenue, netIncome, reportedCurrency, eps, ebitdaratio, fillingDate, acceptedDate, date,
   } = data;
   const breakDate = String(date).split('-');
   return (
@@ -18,32 +19,32 @@ const StatementRow = ({ data }) => {
         </div>
       </td>
       <td>
-        <div className="d-flex">
+        <div className={`${styles.tableContent} d-flex`}>
           <div>
             Revenue:
             {' '}
-            <FormatNumber number={revenue} />
+            <FormatNumber number={revenue} currency={reportedCurrency} />
           </div>
           <div style={{ marginLeft: '2rem' }}>
             Net Income:
-            <FormatNumber number={netIncome} />
+            <FormatNumber number={netIncome} currency={reportedCurrency} />
           </div>
         </div>
-        <div className="d-flex my-3">
+        <div className={`${styles.tableContent} d-flex my-3`}>
           <div>
-            Ratio:
-            {`${Number(newIncomeRatio).toFixed(2)}`}
+            Reported currency: &nbsp;
+            {reportedCurrency}
           </div>
           <div style={{ marginLeft: '2rem' }}>
-            eps:
+            <BsArrowUp color="green" />
             {`${Number(eps).toFixed(2)}`}
           </div>
           <div style={{ marginLeft: '2rem' }}>
-            epsdiluted:
-            {`${Number(epsdiluted).toFixed(2)}`}
+            <BsArrowDown color="red" />
+            {`${Number(ebitdaratio).toFixed(2)}`}
           </div>
         </div>
-        <div className="d-flex my-3">
+        <div className={`${styles.tableContent} d-flex my-3`}>
           <div>
             Filling Date: &nbsp;
             {fillingDate}

@@ -20,8 +20,6 @@ export const fetchStockMetrics = () => async (dispatch) => {
 };
 
 export const fetchCompanyDetails = (companySymbol) => async (dispatch) => {
-  console.log('i got here');
-
   const data = await Promise.all([
     fetchApiCall(`${endpoint}profile/${companySymbol}?apikey=${apiKey}`),
     fetchApiCall(`${endpoint}income-statement/${companySymbol}?limit=120&apikey=${apiKey}`),

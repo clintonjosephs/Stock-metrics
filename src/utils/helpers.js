@@ -14,14 +14,15 @@ export const sumChanges = (data) => data
   .reduce((value, { change }) => value + (Number(change) || 0), 0).toFixed(2);
 
 export const getNumberSuffix = (num) => {
-  if (num > 999 && num < 1000000) {
-    return 'K'; // convert to K for number from > 1000 < 1 million
-  } if (num >= 1000000 && num <= 999000000) {
-    return 'M'; // convert to M for number from > 1 million
-  } if (num >= 1000000000 && num <= 999000000000) {
-    return 'B'; // convert to B for number from > 1 billion
-  } if (num >= 1000000000000) {
-    return 'T'; // convert to T for number from > 1 trillion
+  const number = Math.abs(num);
+  if (number > 999 && number < 1000000) {
+    return 'k'; // convert to K for number from > 1000 < 1 million
+  } if (number >= 1000000 && number <= 999000000) {
+    return 'm'; // convert to M for number from > 1 million
+  } if (number >= 1000000000 && number <= 999000000000) {
+    return 'b'; // convert to B for number from > 1 billion
+  } if (number >= 1000000000000) {
+    return 't'; // convert to T for number from > 1 trillion
   }
   return ''; // if value < 1000, nothing to do
 };

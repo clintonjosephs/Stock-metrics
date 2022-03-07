@@ -21,9 +21,15 @@
 }
 
 .year {
-    font-size: xx-large;
+    font-size: large;
+    font-weight: 700;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    text-align: center;
+}
+
+.tableContent {
+  font-size: 0.8rem;
 }
 
 @media (max-width: 768px) {
