@@ -8,7 +8,7 @@ import FormatNumber from '../FormatNumber';
 import styles from '../styles/Details.module.css';
 import ReportModal from '../ReportModal';
 
-const Profile = ({ details }) => {
+const Profile = ({ details, statement }) => {
   const {
     companyName, symbol, description, website, country, mktCap, image, ceo,
   } = details;
@@ -76,13 +76,16 @@ const Profile = ({ details }) => {
           </Button>
         </Col>
       </Row>
-      <ReportModal show={show} onHide={handleClose} />
+      <ReportModal show={show} onHide={handleClose} data={statement} />
     </Container>
   );
 };
 
 Profile.propTypes = {
   details: PropTypes.arrayOf(
+    PropTypes.shape({}),
+  ).isRequired,
+  statement: PropTypes.arrayOf(
     PropTypes.shape({}),
   ).isRequired,
 };

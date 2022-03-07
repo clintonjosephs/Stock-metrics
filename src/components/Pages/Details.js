@@ -5,6 +5,7 @@ import { fetchCompanyDetails } from '../../redux/stock/StockThunks';
 import IncomeStatement from '../Details/IncomeStatement';
 import Profile from '../Details/Profile';
 import Header from './Header';
+import { formatDataForChart } from '../../utils/helpers';
 
 const Details = () => {
   const details = useSelector(
@@ -26,7 +27,7 @@ const Details = () => {
     return (
       <section className="pb-5">
         <Header type />
-        <Profile details={details[0]} />
+        <Profile details={details[0]} statement={formatDataForChart(statement)} />
         <IncomeStatement statement={statement} />
       </section>
     );
