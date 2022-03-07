@@ -5,6 +5,7 @@ const LOAD_COMPANY_DETAILS = 'stockMetrics/stock/LOAD_COMPANY_DETAILS';
 const LOAD_INCOME_STATEMENT = 'stockMetrics/stock/LOAD_INCOME_STATEMENT';
 const FILTER_COMPANIES = 'stockMetrics/stock/FILTER_COMPANIES';
 const RESET_DETAILS = 'stockMetrics/stock/RESET_DETAILS';
+const ERROR_STATUS = 'stockMetrics/stock/ERROR_STATUS';
 
 // initial state of the store data
 const metricsData = {
@@ -12,6 +13,7 @@ const metricsData = {
   details: [],
   statement: [],
   dataWorker: [],
+  error: false,
 };
 
 // syncronous actions
@@ -40,6 +42,11 @@ export const resetDetails = () => ({
   type: RESET_DETAILS,
 });
 
+export const apiError = (payload) => ({
+  type: ERROR_STATUS,
+  payload,
+});
+
 // reducers
 
 const metricsDataReducer = (state = metricsData, { type, payload }) => {
@@ -63,6 +70,8 @@ const metricsDataReducer = (state = metricsData, { type, payload }) => {
       };
     case RESET_DETAILS:
       return { ...state, statement: [], details: [] };
+    case ERROR_STATUS:
+      return { ...state, error: payload };
     default:
       return state;
   }

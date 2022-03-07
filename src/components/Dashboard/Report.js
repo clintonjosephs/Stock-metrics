@@ -10,16 +10,9 @@ const Reports = ({
   data, dailyTotal, dailyProfit, dailyChanges, navigate,
 }) => (
   <Container className={styles.marginCreate}>
-    <Row
-      className={`${styles.row} justify-content-center align-content-center mx-lg-5 mt-5`}
-    >
+    <Row className={`${styles.row} justify-content-center align-content-center mx-lg-5 mt-5`}>
       <TopCompanies data={data} redirect={navigate} />
-      <Col
-        md={5}
-        sm={6}
-        xs={12}
-        style={{ background: 'transparent', padding: '1rem' }}
-      >
+      <Col md={5} sm={6} xs={12} style={{ background: 'transparent', padding: '1rem' }}>
         <div className="d-flex flex-column align-items-end">
           <h4 style={{ color: 'var(--neutral-color-2)' }}>
             Daily Metrics Summary

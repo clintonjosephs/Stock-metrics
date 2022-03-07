@@ -7,10 +7,11 @@ import Profile from '../Details/Profile';
 import Header from './Header';
 import { formatDataForChart } from '../../utils/helpers';
 import SkeletonLoader from '../SkeletonLoader';
+import ErrorPage from '../ErrorPage';
 
 const Details = () => {
   const details = useSelector((state) => state.metricsDataReducer.details);
-
+  const error = useSelector((state) => state.metricsDataReducer.error);
   const statement = useSelector((state) => state.metricsDataReducer.statement);
 
   const param = useParams();
@@ -19,6 +20,14 @@ const Details = () => {
   useEffect(() => {
     dispatch(fetchCompanyDetails(param.id));
   }, [param]);
+
+  if (error) {
+    return (
+      <>
+        <ErrorPage />
+      </>
+    );
+  }
 
   if (details.length === 0 || statement.length === 0) {
     return <SkeletonLoader sectionType />;

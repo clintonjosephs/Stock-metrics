@@ -11,9 +11,10 @@ const TopCompanies = ({ data, redirect }) => (
       ({
         change, changesPercentage, price, id, companyName,
       }, index) => (
+
         <Col
-          onClick={() => redirect(id)}
           key={id}
+          onClick={() => redirect(id)}
           md={2}
           sm={`${index === 0 ? 12 : 6}`}
           xs={`${index === 0 ? 12 : 6}`}
@@ -26,6 +27,7 @@ const TopCompanies = ({ data, redirect }) => (
             cursor: 'pointer',
           }}
         >
+
           <div className="d-flex flex-column align-items-end">
             <span className={styles.topSymbol}>
               <h6>{id}</h6>
@@ -52,6 +54,7 @@ const TopCompanies = ({ data, redirect }) => (
                 : `${companyName.substring(0, 18)}...`
             }`}
           </p>
+
         </Col>
       ),
     )}

@@ -16,7 +16,7 @@ const SkeletonLoader = ({ sectionType }) => (
         >
           {' '}
           <SkeletonTheme baseColor="#272e48" highlightColor="#f8f9f9">
-            <Skeleton count={8} />
+            <Skeleton count={5} />
           </SkeletonTheme>
         </Row>
       </Container>

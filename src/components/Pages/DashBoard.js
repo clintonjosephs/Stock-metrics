@@ -9,11 +9,12 @@ import {
   sumPrices, sumProfit, sumChanges, sortObj,
 } from '../../utils/helpers';
 import SkeletonLoader from '../SkeletonLoader';
+import ErrorPage from '../ErrorPage';
 
 const Dashboard = () => {
   const metrics = useSelector((state) => state.metricsDataReducer.metrics);
-
   const worker = useSelector((state) => state.metricsDataReducer.dataWorker);
+  const error = useSelector((state) => state.metricsDataReducer.error);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -24,8 +25,20 @@ const Dashboard = () => {
     navigate(`/details/${id}`);
   };
 
+  if (error) {
+    return (
+      <>
+        <ErrorPage />
+      </>
+    );
+  }
+
   if (metrics.length === 0) {
-    return <SkeletonLoader sectionType={false} />;
+    return (
+      <>
+        <SkeletonLoader sectionType={false} />
+      </>
+    );
   }
 
   let sort = [];
