@@ -29,11 +29,11 @@ export const loadCompanyStatement = (payload) => ({
 const metricsDataReducer = (state = metricsData, { type, payload }) => {
   switch (type) {
     case LOAD_STOCK_METRICS:
-      return { metrics: [...payload] };
+      return { ...state, metrics: [...payload] };
     case LOAD_COMPANY_DETAILS:
-      return { details: [...payload] };
+      return { ...state, details: [...payload] };
     case LOAD_INCOME_STATEMENT:
-      return { statement: [...payload] };
+      return { ...state, statement: [...payload] };
     default:
       return state;
   }

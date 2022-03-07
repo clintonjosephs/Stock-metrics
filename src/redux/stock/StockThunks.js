@@ -20,11 +20,12 @@ export const fetchStockMetrics = () => async (dispatch) => {
 };
 
 export const fetchCompanyDetails = (companySymbol) => async (dispatch) => {
-  const data = await fetchApiCall(`${endpoint}profile/${companySymbol}?apikey=${apiKey}`);
-  dispatch(loadCompanyDetails(data));
-};
+  console.log('i got here');
 
-export const fetchCompanyIncomeStatement = (companySymbol) => async (dispatch) => {
-  const data = await fetchApiCall(`${endpoint}income-statement/${companySymbol}?limit=120&apikey=${apiKey}`);
-  dispatch(loadCompanyStatement(data));
+  const data = await Promise.all([
+    fetchApiCall(`${endpoint}profile/${companySymbol}?apikey=${apiKey}`),
+    fetchApiCall(`${endpoint}income-statement/${companySymbol}?limit=120&apikey=${apiKey}`),
+  ]);
+  dispatch(loadCompanyDetails(data[0]));
+  dispatch(loadCompanyStatement(data[1]));
 };
