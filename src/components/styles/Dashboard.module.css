@@ -54,6 +54,22 @@
   width: 10rem;
 }
 
+.formControl {
+  border: none;
+  outline: none;
+}
+
+.formControl:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.formControl:hover {
+  background: none !important;
+  color: black;
+}
+
 .card {
   color: white;
   background: var(--primary-color-2);

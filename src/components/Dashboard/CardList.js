@@ -3,10 +3,17 @@ import PropTypes from 'prop-types';
 import { Container, Row } from 'react-bootstrap';
 import Card from './Card';
 import styles from '../styles/Dashboard.module.css';
+import SearchForm from './SearchForm';
 
 const CardList = ({ data }) => (
   <Container className={styles.marginCreate}>
-    <Row className="mx-lg-5 mt-5">
+    <Row
+      className="mx-lg-5 mt-5 p-0"
+      style={{ background: 'white', boxShadow: '0 0 2px var(--neutral-color-2)' }}
+    >
+      <SearchForm />
+    </Row>
+    <Row className="mx-lg-5">
       {
       data.map(({
         id, change, companyName, price, changesPercentage,
