@@ -26,7 +26,7 @@ const SearchForm = () => {
           className={styles.formControl}
           onChange={handleSearch}
           value={searchVal}
-          role="input"
+          role="search"
         />
         <Button variant="outline-secondary" id="button-addon2" className={styles.formControl}>
           <BiSearchAlt2 />

@@ -47,3 +47,8 @@ export const formatDataForChart = (data) => {
   );
   return reformat.reverse();
 };
+
+export const formatDataForTable = (data) => {
+  const reformat = data.map((value) => (value));
+  return reformat.reverse();
+};

@@ -19,7 +19,7 @@ const IncomeStatement = ({ statement }) => (
               <th>Income Statement</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody role="rowgroup">
             { statement.map((data) => <StatementRow key={data.date} data={data} />)}
           </tbody>
         </Table>

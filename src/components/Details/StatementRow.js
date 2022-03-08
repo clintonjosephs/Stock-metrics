@@ -60,9 +60,7 @@ const StatementRow = ({ data }) => {
 };
 
 StatementRow.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({}),
-  ).isRequired,
+  data: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default StatementRow;

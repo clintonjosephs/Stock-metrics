@@ -5,13 +5,12 @@ import { fetchCompanyDetails } from '../../redux/stock/StockThunks';
 import IncomeStatement from '../Details/IncomeStatement';
 import Profile from '../Details/Profile';
 import Header from './Header';
-import { formatDataForChart } from '../../utils/helpers';
+import { formatDataForChart, formatDataForTable } from '../../utils/helpers';
 import SkeletonLoader from '../SkeletonLoader';
 import ErrorPage from '../ErrorPage';
 
 const Details = () => {
   const { details, error, statement } = useSelector((state) => state.metricsDataReducer);
-
   const param = useParams();
   const dispatch = useDispatch();
 
@@ -35,7 +34,7 @@ const Details = () => {
     <section className="pb-5">
       <Header type />
       <Profile details={details[0]} statement={formatDataForChart(statement)} />
-      <IncomeStatement statement={statement} />
+      <IncomeStatement statement={formatDataForTable(statement)} />
     </section>
   );
 };
