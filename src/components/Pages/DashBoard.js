@@ -12,9 +12,7 @@ import SkeletonLoader from '../SkeletonLoader';
 import ErrorPage from '../ErrorPage';
 
 const Dashboard = () => {
-  const metrics = useSelector((state) => state.metricsDataReducer.metrics);
-  const worker = useSelector((state) => state.metricsDataReducer.dataWorker);
-  const error = useSelector((state) => state.metricsDataReducer.error);
+  const { metrics, dataWorker, error } = useSelector((state) => state.metricsDataReducer);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -57,7 +55,7 @@ const Dashboard = () => {
           data={top3}
           navigate={navigateHandler}
         />
-        <CardList data={worker} navigate={navigateHandler} />
+        <CardList data={dataWorker} navigate={navigateHandler} />
       </section>
     </>
   );

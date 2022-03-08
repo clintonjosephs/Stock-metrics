@@ -10,9 +10,7 @@ import SkeletonLoader from '../SkeletonLoader';
 import ErrorPage from '../ErrorPage';
 
 const Details = () => {
-  const details = useSelector((state) => state.metricsDataReducer.details);
-  const error = useSelector((state) => state.metricsDataReducer.error);
-  const statement = useSelector((state) => state.metricsDataReducer.statement);
+  const { details, error, statement } = useSelector((state) => state.metricsDataReducer);
 
   const param = useParams();
   const dispatch = useDispatch();
