@@ -13,6 +13,7 @@ const TopCompanies = ({ data, redirect }) => (
       }, index) => (
 
         <Col
+          role="feed"
           key={id}
           onClick={() => redirect(id)}
           md={2}
