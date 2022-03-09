@@ -1,0 +1,47 @@
+.marginCreate {
+  min-width: 50rem;
+  text-align: justify;
+}
+
+.marginCreate span {
+  color: var(--neutral-color-1);
+}
+
+.marginCreate a {
+  color: var(--neutral-color-2);
+}
+
+.row {
+  background: var(--primary-color-2);
+  margin-top: 1rem;
+  justify-items: center;
+  min-height: 20rem;
+  color: var(--neutral-color-2);
+  line-height: 1.7rem;
+}
+
+.year {
+  font-size: large;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.tableContent {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .card {
+    font-size: 1rem;
+  }
+
+  .marginCreate {
+    min-width: 0;
+  }
+
+  .staticChart {
+    width: 8rem;
+  }
+}
