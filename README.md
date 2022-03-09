@@ -4,9 +4,11 @@
 
 ![screenshot](./src/images/presentation.gif)
 
-[Project Demo](https://stock-metrics-clint.netlify.app/)
 
->  Space Traveler's website was built with real live data from the SpaceX API. The application provides commercial and scientific space travel services that allow users book rockets and join selected space missions.
+- [Live Demo](https://stock-metrics-clint.netlify.app/)
+- [Presentation Video](https://www.loom.com/share/eba6bdff52dc4a3a805a3a98a7a7064c)
+
+>  Stock metrics is a web(mobile-focused) app for checking the companies listed on the stock exchange and see their live metrics. Its data is consumed from the Financial modelling API. It is built using React, Redux, and React-bootsrap, Skeleton Loader, Recharts.
 
 
 Additional description about the project and its features.
@@ -47,14 +49,15 @@ To get a local copy up and running follow these simple example steps.
 #### Clone this repository
 
 ```bash
-$ git@github.com:clintonjosephs/Space-traveler.git
-$ cd Space-traveler
+$ git@github.com:clintonjosephs/Stock-metrics.git
+$ cd Stock-metrics
 ```
 #### Run project
 
 ```bash
 $ npm install
 $ npm build
+$ npm run test
 $ npm start
 ```
 
@@ -74,7 +77,10 @@ $ runs on http://localhost:3001/
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/clintonjosephs/BookStore/issues).
+Feel free to check the [issues page](https://github.com/clintonjosephs/Stock-metrics/issues).
+
+## Acknowledgement
+Original design idea by [Nelson Sakwa on Behance..](https://www.behance.net/gallery/31579789/Ballhead-App-%28Free-PSDs%29) Under the [Creative Commons License](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ## Show your support
 
