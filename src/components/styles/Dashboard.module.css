@@ -16,7 +16,6 @@
   align-items: center;
   display: flex;
   height: 100%;
-  justify-items: space-between;
 }
 
 .row {
@@ -91,7 +90,7 @@
   }
 
   .marginCreate {
-    min-width: 0rem;
+    min-width: 0;
   }
 
   .staticChart {

@@ -4,11 +4,11 @@
 }
 
 .marginCreate span {
-    color: var(--neutral-color-1);
+  color: var(--neutral-color-1);
 }
 
 .marginCreate a {
-    color: var(--neutral-color-2);
+  color: var(--neutral-color-2);
 }
 
 .row {
@@ -21,11 +21,11 @@
 }
 
 .year {
-    font-size: large;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    text-align: center;
+  font-size: large;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 .tableContent {
@@ -38,7 +38,7 @@
   }
 
   .marginCreate {
-    min-width: 0rem;
+    min-width: 0;
   }
 
   .staticChart {
