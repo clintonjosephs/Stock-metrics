@@ -1,0 +1,5 @@
+.App {
+  background: var(--primary-color);
+  min-height: 100vh;
+  padding-top: 0.5rem;
+}
