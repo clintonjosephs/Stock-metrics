@@ -4,13 +4,15 @@ import MockData from '../__mocks__/MockMetrics';
 
 describe('Test all synchronous actions', () => {
   const Data = MockData.map(
-    ({ symbol, name, change, price, changesPercentage }) => ({
+    ({
+      symbol, name, change, price, changesPercentage,
+    }) => ({
       id: symbol,
       change,
       companyName: name,
       price,
       changesPercentage,
-    })
+    }),
   );
 
   const metricsData = {
@@ -23,7 +25,7 @@ describe('Test all synchronous actions', () => {
 
   const dataPush = metricsDataReducer(
     metricsData,
-    Actions.loadStockMetrics(Data)
+    Actions.loadStockMetrics(Data),
   );
 
   it('load all the active stock companies', () => {
@@ -33,7 +35,7 @@ describe('Test all synchronous actions', () => {
   it('loads all company details', () => {
     const { details } = metricsDataReducer(
       dataPush,
-      Actions.loadCompanyDetails(MockDetails.details)
+      Actions.loadCompanyDetails(MockDetails.details),
     );
     expect(details.length).toBe(1);
     expect(details[0].companyName).toEqual('Apple Inc.');
@@ -42,7 +44,7 @@ describe('Test all synchronous actions', () => {
   it('loads all company income statement', () => {
     const { statement } = metricsDataReducer(
       dataPush,
-      Actions.loadCompanyStatement(MockDetails.statement)
+      Actions.loadCompanyStatement(MockDetails.statement),
     );
     expect(statement.length).toBe(5);
     expect(statement[0].symbol).toEqual('AAPL');
@@ -51,7 +53,7 @@ describe('Test all synchronous actions', () => {
   it('test filter stock companies', () => {
     const { dataWorker } = metricsDataReducer(
       dataPush,
-      Actions.filterCompanies('ford')
+      Actions.filterCompanies('ford'),
     );
     expect(dataWorker.length).toBeLessThan(dataPush.dataWorker.length);
     expect(dataWorker[0]).toEqual(dataPush.metrics[0]);
@@ -60,7 +62,7 @@ describe('Test all synchronous actions', () => {
   it('test that company details is reset', () => {
     const { details, statement } = metricsDataReducer(
       dataPush,
-      Actions.resetDetails
+      Actions.resetDetails,
     );
     expect(details).toEqual([]);
     expect(statement).toEqual([]);

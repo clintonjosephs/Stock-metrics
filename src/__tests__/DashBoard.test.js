@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import {
-  render, fireEvent, cleanup
+  render, fireEvent, cleanup,
 } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import fetchMock from 'jest-fetch-mock';
@@ -33,7 +33,7 @@ afterEach(() => {
 
 describe('Dashboard component', () => {
   it('Renders the nav component', async () => {
-    let navbar = await DashBoardProvider.findByText('Stock Metrics');
+    const navbar = await DashBoardProvider.findByText('Stock Metrics');
     expect(navbar).toBeTruthy();
   });
 
@@ -53,16 +53,16 @@ describe('Dashboard component', () => {
   it('Renders the search bar', async () => {
     const input = await DashBoardProvider.findByRole('search');
     expect(input).toBeInTheDocument();
-  })
+  });
 
   it('Filters the list of cards on value change', async () => {
     const input = await DashBoardProvider.findByRole('search');
-    fireEvent.change(input, {target: {value: 'apple'}})
+    fireEvent.change(input, { target: { value: 'apple' } });
     let cards = await DashBoardProvider.findAllByRole('img');
     expect(cards).toHaveLength(1);
 
-    fireEvent.change(input, {target: {value: 'f'}})
+    fireEvent.change(input, { target: { value: 'f' } });
     cards = await DashBoardProvider.findAllByRole('img');
     expect(cards).toHaveLength(8);
-  })
+  });
 });

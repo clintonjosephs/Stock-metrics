@@ -1,13 +1,12 @@
 import React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
 import fetchMock from 'jest-fetch-mock';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Details from '../components/Pages/Details';
 
 import MockDetails from '../__mocks__/MockDetails';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 fetchMock.enableMocks();
-console.log(typeof [...MockDetails.details]);
 const mockDispatch = jest.fn();
 jest.mock('react-redux', () => ({
   useSelector: () => ({
@@ -25,7 +24,7 @@ beforeEach(() => {
   DetailsProvider = render(
     <Router>
       <Details />
-    </Router>
+    </Router>,
   );
 });
 
@@ -46,7 +45,7 @@ describe('Details component', () => {
 
   test('Company details is rendered', async () => {
     const companyDetails = await DetailsProvider.findByText(
-      'Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. It also sells various related services. In addition, the company offers iP...click website to read more'
+      'Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. It also sells various related services. In addition, the company offers iP...click website to read more',
     );
     expect(companyDetails).toBeInTheDocument();
   });
