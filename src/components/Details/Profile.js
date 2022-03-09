@@ -81,7 +81,11 @@ const Profile = ({ details, statement }) => {
 };
 
 Profile.propTypes = {
-  details: PropTypes.objectOf(PropTypes.any).isRequired,
+  details: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.bool,
+  ])).isRequired,
   statement: PropTypes.arrayOf(
     PropTypes.shape({}),
   ).isRequired,

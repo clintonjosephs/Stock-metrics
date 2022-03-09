@@ -60,7 +60,11 @@ const StatementRow = ({ data }) => {
 };
 
 StatementRow.propTypes = {
-  data: PropTypes.objectOf(PropTypes.any).isRequired,
+  data: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.bool,
+  ])).isRequired,
 };
 
 export default StatementRow;
