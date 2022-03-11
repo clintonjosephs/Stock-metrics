@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import Dashboard from '../components/Pages/DashBoard';
 import Details from '../components/Pages/Details';
