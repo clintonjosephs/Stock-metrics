@@ -7,20 +7,16 @@ import store from '../redux/store';
 
 const DashboardProvider = () => (
   <Provider store={store}>
-    <Router basename={process.env.PUBLIC_URL}>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-      </Routes>
+    <Router>
+      <Dashboard />
     </Router>
   </Provider>
 );
 
 const DetailsProvider = () => (
   <Provider store={store}>
-    <Router basename={process.env.PUBLIC_URL}>
-      <Routes>
-        <Route path="/details/:id" element={<Details />} />
-      </Routes>
+    <Router>
+      <Details />
     </Router>
   </Provider>
 );
