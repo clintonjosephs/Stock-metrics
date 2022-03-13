@@ -8,7 +8,7 @@
 - [Live Demo](https://stock-metrics-clint.netlify.app/)
 - [Presentation Video](https://www.loom.com/share/eba6bdff52dc4a3a805a3a98a7a7064c)
 
->  Stock metrics is a web(mobile-focused) app for checking the companies listed on the stock exchange and see their live metrics. Its data is consumed from the Financial modelling API. It is built using React, Redux, and React-bootsrap, Skeleton Loader, Recharts.
+>  Stock metrics is a web(mobile-focused) app for checking the companies listed on the stock exchange and see their live metrics. Its data is consumed from the [Financial modelling API](https://site.financialmodelingprep.com/developer/docs/). It is built using React, Redux, and React-bootsrap, Skeleton Loader, Recharts.
 
 
 Additional description about the project and its features.
