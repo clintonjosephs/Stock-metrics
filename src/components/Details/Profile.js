@@ -75,7 +75,7 @@ const Profile = ({ details, statement }) => {
           </Button>
         </Col>
       </Row>
-      <ReportModal show={show} onHide={handleClose} data={statement} />
+      {show && <ReportModal show={show} onHide={handleClose} data={statement} />}
     </Container>
   );
 };
