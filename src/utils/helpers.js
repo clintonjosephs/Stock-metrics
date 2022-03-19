@@ -1,3 +1,4 @@
+// this file is for functions that helped format the receieved data.
 export const sortObj = (data) => data.sort((a, b) => b.price - a.price);
 
 export const sumPrices = (data) => data
