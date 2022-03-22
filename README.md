@@ -72,6 +72,7 @@ $ runs on http://localhost:3001/
 
 - GitHub: [@clintonjosephs](https://github.com/clintonjosephs)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/clinton-mbonu)
+- Twitter: [@clintonmbonu2](https://twitter.com/clintonmbonu2)
 
 ## 🤝 Contributing
 
